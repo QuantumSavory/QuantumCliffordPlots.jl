@@ -47,7 +47,7 @@ Makie.@recipe(
 function (scene)
     Makie.Theme(;
         xzcomponents = :together,
-        colormap = Makie.cgrad(:viridis, 4, categorical = true),
+        colormap = Makie.cgrad([:lightgray,Makie.RGBf(1,0.4,0.4),Makie.RGBf(0.3,1,0.5),Makie.RGBf(0.4,0.4,1)], 4, categorical = true),
         colorrange = (-0.5, 3.5)
     )
 end,
@@ -71,6 +71,19 @@ function Makie.plot!(myplot::StabilizerPlot)
         colormap=myplot.colormap
     )
     myplot
+end
+
+""" This function is a temporary fix for Makie limitations and will be removed without warning.
+
+See [Makie#379](https://github.com/JuliaPlots/Makie.jl/issues/379)."""
+function stabilizerplot_(s; colorbar=true)
+    fig,ax,p = stabilizerplot(s)
+    Makie.hidedecorations!(ax)
+    Makie.hidespines!(ax)
+    ax.aspect = Makie.DataAspect()
+    colorbar && Makie.Colorbar(fig[2, 1], p, ticks = (0:3, ["I", "X", "Z", "Y"]), vertical = false, flipaxis = false)
+    Makie.colsize!(fig.layout, 1, Makie.Aspect(1, min(1,size(s,2)/size(s,1))))
+    fig
 end
 
 end
