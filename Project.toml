@@ -1,17 +1,19 @@
 name = "QuantumCliffordPlots"
 uuid = "4eeed724-23be-436c-a322-a8540588cc9f"
 authors = ["Stefan Krastanov <stefan@krastanov.org> and contributors"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+Quantikz = "b0d11df0-eea3-4d79-b4a5-421488cbf74b"
 QuantumClifford = "0525e862-1e90-11e9-3e4d-1b39d7109de1"
 RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 
 [compat]
-Makie = "0.15.3, 0.16"
-QuantumClifford = "0.2.12, 0.3, 0.4"
-RecipesBase = "0.7, 0.8, 1.0"
+Makie = "0.16"
+Quantikz = "1.1.2"
+QuantumClifford = "0.4.1"
+RecipesBase = "1.0"
 julia = "1.6"
 
 [extras]
