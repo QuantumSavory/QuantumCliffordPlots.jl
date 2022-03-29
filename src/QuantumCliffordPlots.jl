@@ -95,13 +95,13 @@ using QuantumClifford.Experimental.NoisyCircuits
 
 function Quantikz.QuantikzOp(op::SparseGate)
     g = op.cliff
-    if g==CNOT
+    if g==tCNOT
         return Quantikz.CNOT(op.indices...)
-    elseif g==SWAP*CNOT*SWAP
+    elseif g==tSWAP*tCNOT*tSWAP
         return Quantikz.CNOT(op.indices[end:-1:begin]...)
-    elseif g==CPHASE
+    elseif g==tCPHASE
         return Quantikz.CPHASE(op.indices...)
-    elseif g==SWAP
+    elseif g==tSWAP
         return Quantikz.SWAP(op.indices...)
     else
         return Quantikz.MultiControlU([],[],op.indices) # TODO Permit skipping the string
