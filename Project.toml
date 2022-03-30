@@ -12,7 +12,7 @@ RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 [compat]
 Makie = "0.16"
 Quantikz = "1.1.2"
-QuantumClifford = "0.5"
+QuantumClifford = "0.5, 0.4"
 RecipesBase = "1.0"
 julia = "1.6"
 
