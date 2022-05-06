@@ -10,7 +10,7 @@ QuantumClifford = "0525e862-1e90-11e9-3e4d-1b39d7109de1"
 RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 
 [compat]
-Makie = "0.16"
+Makie = "0.16, 0.17"
 Quantikz = "1.1.2"
 QuantumClifford = "0.5"
 RecipesBase = "1.0"
